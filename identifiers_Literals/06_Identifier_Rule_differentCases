@@ -1,0 +1,250 @@
+/**
+ * JavaScript Naming Conventions (Cases)
+ * =====================================
+ * 
+ * Different cases are used for different types of identifiers in JavaScript.
+ * Following consistent naming conventions improves code readability and maintainability.
+ */
+
+// ============================================================================
+// 1. camelCase
+// ============================================================================
+// First word lowercase, each subsequent word capitalized. No separators.
+// MOST COMMON in JavaScript for variables and functions.
+
+// Variables
+let userName = "JohnDoe";
+let totalPrice = 99.99;
+let isAuthenticated = true;
+let currentDate = new Date();
+
+// Functions
+function calculateTotal() {
+    return 100;
+}
+
+function getUserById(userId) {
+    return { id: userId, name: "John" };
+}
+
+function fetchDataFromApi() {
+    return fetch("https://api.example.com/data");
+}
+
+// Methods in objects/classes
+const userService = {
+    getUserProfile: function() {},
+    updateUserSettings: function() {},
+    deleteUserAccount: function() {}
+};
+
+// React Hooks (custom)
+function useLocalStorage(key, initialValue) {
+    // hook implementation
+}
+
+// ============================================================================
+// 2. PascalCase (UpperCamelCase)
+// ============================================================================
+// Every word starts with uppercase. No separators.
+// Used for classes, constructors, and React/Vue/Angular components.
+
+// Classes
+class UserProfile {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+}
+
+class ShoppingCart {
+    addItem(item) {
+        this.items.push(item);
+    }
+}
+
+class HttpRequestHandler {
+    handleRequest(req, res) {
+        // handle request
+    }
+}
+
+// React/Vue/Angular Components
+function UserCard({ user }) {
+    return `<div>${user.name}</div>`;
+}
+
+function ProductList() {
+    return `<ul></ul>`;
+}
+
+class OrderConfirmationModal {
+    // modal logic
+}
+
+// Constructor functions (old style)
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+// Enums (simulated in JS)
+const HttpStatusCode = {
+    OK: 200,
+    NotFound: 404,
+    ServerError: 500
+};
+
+// ============================================================================
+// 3. snake_case
+// ============================================================================
+// All lowercase with underscores between words.
+// Less common in JS, but used in JSON keys, database fields, and some configs.
+
+// Database field names (when mapped to JS)
+const user_record = {
+    first_name: "John",
+    last_name: "Doe",
+    email_address: "john@example.com",
+    created_at: "2024-01-01",
+    updated_at: "2024-01-15"
+};
+
+// JSON API responses
+const apiResponse = {
+    user_id: 123,
+    profile_image: "url.jpg",
+    is_active: true
+};
+
+// Some libraries use snake_case for options
+const config = {
+    api_key: "secret123",
+    base_url: "https://api.example.com",
+    timeout_seconds: 30,
+    max_retries: 3
+};
+
+// Python-style in JS (not recommended but seen)
+function get_user_data() {
+    return {};
+}
+
+// ============================================================================
+// 4. SCREAMING_SNAKE_CASE (UPPER_CASE)
+// ============================================================================
+// All uppercase with underscores. Used for constants that are truly constant.
+
+// True constants (configuration values, magic numbers)
+const PI = 3.14159;
+const MAX_USERS = 100;
+const API_BASE_URL = "https://api.example.com";
+const DEFAULT_TIMEOUT_MS = 5000;
+
+// Environment variable names (convention)
+const DATABASE_URL = process.env.DATABASE_URL;
+const JWT_SECRET = process.env.JWT_SECRET;
+const NODE_ENV = process.env.NODE_ENV;
+
+// Enum-like constants
+const USER_ROLES = {
+    ADMIN: "admin",
+    EDITOR: "editor",
+    VIEWER: "viewer"
+};
+
+const HTTP_METHODS = {
+    GET: "GET",
+    POST: "POST",
+    PUT: "PUT",
+    DELETE: "DELETE"
+};
+
+// File-level constants
+const MAX_FILE_SIZE_BYTES = 10485760; // 10MB
+const SUPPORTED_IMAGE_TYPES = ["jpg", "png", "gif", "webp"];
+
+// ============================================================================
+// 5. kebab-case (dash-case, lisp-case)
+// ============================================================================
+// All lowercase with hyphens. NOT valid for JS variables, but used elsewhere.
+
+// CSS class names and IDs
+// <div class="user-profile-card">
+// <input id="email-address-field">
+// <nav class="main-navigation-menu">
+
+// HTML custom element tags (Web Components)
+// <user-profile-card></user-profile-card>
+// <order-confirmation-modal></order-confirmation-modal>
+
+// File and folder names
+// src/
+//   components/
+//     user-profile-card.js
+//     order-summary.tsx
+//   utils/
+//     date-formatter.js
+//     string-helpers.js
+
+// URL slugs
+// /blog-posts/my-first-article
+// /products/wireless-mouse-black
+
+// Package names (npm)
+// "lodash"
+// "react-dom"
+// "@company/design-system"
+// "json-web-token"
+
+// Git branch names
+// feature/add-user-authentication
+// bugfix/fix-login-redirect
+// hotfix/critical-payment-bug
+
+// ============================================================================
+// Summary Table
+// ============================================================================
+/*
+| Case                | Example                | Used For                              |
+|---------------------|------------------------|---------------------------------------|
+| camelCase           | getUserById            | variables, functions, methods         |
+| PascalCase          | UserProfile            | classes, components, constructors     |
+| snake_case          | user_record            | JSON keys, DB fields, config (rare)   |
+| SCREAMING_SNAKE     | MAX_RETRY_COUNT        | true constants, env vars, enums       |
+| kebab-case          | user-profile-card      | CSS classes, file names, URLs, HTML   |
+*/
+
+// ============================================================================
+// Practical Example: A Small Project Structure
+// ============================================================================
+
+// File: user-profile-service.js (kebab-case for file)
+
+const DEFAULT_PAGE_SIZE = 20; // SCREAMING_SNAKE_CASE
+
+class UserProfileService { // PascalCase for class
+    constructor(apiClient) {
+        this.apiClient = apiClient; // camelCase for property
+    }
+
+    async getUserById(userId) { // camelCase for method
+        const response = await this.apiClient.get(`/users/${userId}`);
+        return response.data;
+    }
+
+    async updateUserProfile(userId, profileData) {
+        const updated_user = await this.apiClient.put(`/users/${userId}`, {
+            first_name: profileData.firstName,   // snake_case (API JSON)
+            last_name: profileData.lastName,
+            email_address: profileData.emailAddress
+        });
+        return updated_user;
+    }
+}
+
+// Usage in component file: user-profile-card.jsx
+// CSS class: <div className="user-profile-card">
+// HTML tag (if Web Component): <user-profile-card>
+
+export default UserProfileService;
