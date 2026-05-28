@@ -1,0 +1,39 @@
+var $ = "Sachin";
+console.log("$->" + $)
+var $name = "Ramesh";
+
+var _ = 12;
+var _balance = 12000;
+var _secretCode = 6524;
+
+//1st_day_of_week = 'Sunday';
+
+car_no_4 = 'Alto';
+ramesh_1st_son = "Arjun";
+
+// if = 6;
+//class = 50;
+
+var x = 100;
+var X = 10;
+
+console.log("x->" + x);
+console.log("X->" + X);
+
+var name = "Satyaprakash"
+var Name = "Ramprakash"
+
+console.log("name -> " + name + ", Name -> " + Name);
+
+/* var first name = "Yuvraj";
+var first* name = "Testname";
+var first) name = "Krishna" */
+var first_name = "Ram"
+var first$name = "James"
+
+
+
+
+
+
+
