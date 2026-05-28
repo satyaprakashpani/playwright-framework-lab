@@ -1,0 +1,68 @@
+//let block scope
+
+let a = 10;
+
+let retryCount = 0;
+retryCount = retryCount + 1;
+retryCount = retryCount + 1;
+console.log("retry count :" + retryCount);
+
+//let retryCount = 5; //SyntaxError: Identifier 'retryCount' has already been declared
+
+// ❌ SyntaxError: redeclaration not allowed
+
+let testStatus = "Pending";
+if (testStatus === "Pending") {
+    let executionTime = 1200;
+    console.log("Execution time :" + executionTime);
+    //let executionTime = 1500;
+    //console.log("Redeclarion Execution time :" + executionTime);
+    // //SyntaxError: Identifier 'executionTime' has already been declared
+}
+
+//console.log("Execution time :" + executionTime);//ReferenceError: executionTime is not defined
+
+// {} - Block
+console.log(a);//global value
+
+{
+    // console.log(a);ReferenceError: //Cannot access 'a' before initialization
+    let a = 5;
+    console.log(a);
+}
+console.log(a);//global value
+
+// if(){}
+
+if (true) {
+    console.log("Inside if block-----");
+    console.log(a);//Global value 10 as there is no local variable declared as a
+    console.log("End of if block-----");
+}
+
+if (true) {
+    console.log("Inside if block-----");
+    //console.log(a);//ReferenceError: Cannot access 'a' before initialization
+    let a = 20;
+    console.log("If block ->a:" + a);
+}
+
+// funcion name(){}
+printGlobalValue();
+console.log("a-> " + a);
+
+function printGlobalValue() {
+    console.log("Inside printGlobalValue()");
+    console.log("a in printGlobalValue() -> " + a);
+    console.log("End of printGlobalValue()");
+}
+printValue();
+function printValue() {
+    console.log("Inside PrintValue()---")
+    //console.log(a);//ReferenceError: Cannot access 'a' before initialization
+    let a = 50;
+    console.log("a in PrinValue - > " + a);
+}
+
+
+
