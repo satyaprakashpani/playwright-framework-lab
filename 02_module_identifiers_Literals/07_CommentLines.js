@@ -204,14 +204,12 @@ function getOrders() {
 // ============================================================================
 // Summary
 // ============================================================================
-/*
-| Comment Type           | Syntax              | VS Code Shortcut    | Best Used For                          |
-|------------------------|---------------------|---------------------|----------------------------------------|
-| Single-line            | // comment          | Ctrl + /            | Quick notes, short explanations        |
-| Multi-line             | /* comment */       | Shift + Alt + A     | Longer explanations, blocking code     |
-| Documentation (JSDoc)  | /** comment */      | Type /** + Enter    | Functions, classes, API documentation  |
-| Task tags              | TODO, FIXME, etc.   | (manual)            | Marking work to be done later          |
-| Inline                 | code; // comment    | Ctrl + /            | Short clarifications on the same line  |
-| File headers           | /** @fileoverview */| (manual / snippet)  | Module-level documentation             |
-| Region                 | //#region           | (manual)            | Code folding/grouping in editors       |
-*/
+// | Comment Type           | Syntax                | VS Code Shortcut    | Best Used For                          |
+// |------------------------|-----------------------|---------------------|----------------------------------------|
+// | Single-line            | // comment            | Ctrl + /            | Quick notes, short explanations        |
+// | Multi-line             | /* ... * /            | Shift + Alt + A     | Longer explanations, blocking code     |
+// | Documentation (JSDoc)  | /** ... * /           | Type /** + Enter    | Functions, classes, API documentation  |
+// | Task tags              | TODO, FIXME, etc.     | (manual)            | Marking work to be done later          |
+// | Inline                 | code; // comment      | Ctrl + /            | Short clarifications on the same line  |
+// | File headers           | /** @fileoverview * / | (manual / snippet)  | Module-level documentation             |
+// | Region                 | //#region             | (manual)            | Code folding/grouping in editors       |
