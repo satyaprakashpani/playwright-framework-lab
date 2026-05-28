@@ -31,9 +31,12 @@
 // This is a single-line comment
 let price = 100; // This comment explains the variable
 
+// Declare variables for demonstration
+let isLoggedIn = true;
+
 // Check if user is logged in
 if (isLoggedIn) {
-    showDashboard();
+    // Placeholder for dashboard logic
 }
 
 // Temporarily disable a line of code
@@ -122,16 +125,18 @@ function add(a, b) {
 // TODO: Implement input validation for email format
 function signUp(email) {
     // TODO: Add password strength check
+    return true;
 }
 
 // FIXME: This API call fails when the server is under heavy load
 async function fetchData() {
-    const response = await fetch("/api/data");
-    return response.json();
+    // Simulated fetch for demonstration
+    return { json: () => ({ data: [] }) };
 }
 
 // HACK: Workaround for IE11 bug, remove when dropping support
-if (window.navigator.userAgent.indexOf("Trident") > -1) {
+let userAgent = "Mozilla/5.0";
+if (userAgent.indexOf("Trident") > -1) {
     // apply polyfill
 }
 
@@ -141,6 +146,7 @@ const TIMEOUT = 5000;
 // XXX: Refactor this block before next release — too complex
 function processOrder(order) {
     // complex logic...
+    return order;
 }
 
 // ============================================================================
@@ -151,10 +157,13 @@ let count = 0;          // Loop counter
 const MAX = 100;        // Maximum allowed items
 let isReady = false;    // Flag to track initialization status
 
+// Ternary example with declared variables
+let a = 10;
+let b = 20;
 let result = a > b ? a : b; // Ternary: choose the larger value
 
 for (let i = 0; i < 10; i++) { // Iterate 10 times
-    console.log(i);
+    // Loop iteration
 }
 
 // ============================================================================
@@ -172,14 +181,24 @@ for (let i = 0; i < 10; i++) { // Iterate 10 times
 // ============================================================================
 
 // #region Authentication Helpers
-function login() {}
-function logout() {}
-function refreshToken() {}
+function login() {
+    // Authentication logic
+}
+function logout() {
+    // Cleanup logic
+}
+function refreshToken() {
+    // Token refresh logic
+}
 // #endregion
 
 // #region Data Fetching
-function getUsers() {}
-function getOrders() {}
+function getUsers() {
+    // Fetch users logic
+}
+function getOrders() {
+    // Fetch orders logic
+}
 // #endregion
 
 // ============================================================================
