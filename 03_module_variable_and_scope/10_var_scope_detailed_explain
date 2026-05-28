@@ -1,0 +1,39 @@
+var a = 10;//Global scope
+
+console.log(a);
+
+function printValue() {
+    console.log("Inside printValue()");
+    var a = 20;// loacal to printvalue function
+    console.log(a);//20
+
+    if (true) {
+        console.log("Inside if{} block");
+        var a = 9;// As it is var, It is not local to if block, 
+        // Here a new variable a is not created instead it just reassigned 
+        //the value
+        console.log(a)//9
+        console.log("End of if{} block");
+    }
+    console.log(a)//9 Reassigned value  
+    {
+
+        console.log("Inside {} block");
+        var a = 100;// As it is var, It is not local to the block, 
+        // Here a new variable a is not created instead it just reassigned 
+        //the value
+        console.log(a);
+        console.log("End of {} block");
+    }
+    console.log(a);//100, reassigned inside block
+    var a = 35;
+    console.log(a)
+    console.log("End of printValue()");
+
+}
+
+printValue();
+console.log(a);// a= 10 Global value
+var a = 500;
+console.log(a);//500
+
