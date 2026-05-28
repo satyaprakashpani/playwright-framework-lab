@@ -28,7 +28,7 @@ function getUserById(userId) {
 }
 
 function fetchDataFromApi() {
-    return fetch("https://api.example.com/data");
+    return { data: "fetched" };
 }
 
 // Methods in objects/classes
@@ -59,6 +59,7 @@ class UserProfile {
 
 class ShoppingCart {
     addItem(item) {
+        this.items = this.items || [];
         this.items.push(item);
     }
 }
@@ -205,15 +206,13 @@ const SUPPORTED_IMAGE_TYPES = ["jpg", "png", "gif", "webp"];
 // ============================================================================
 // Summary Table
 // ============================================================================
-/*
-| Case                | Example                | Used For                              |
-|---------------------|------------------------|---------------------------------------|
-| camelCase           | getUserById            | variables, functions, methods         |
-| PascalCase          | UserProfile            | classes, components, constructors     |
-| snake_case          | user_record            | JSON keys, DB fields, config (rare)   |
-| SCREAMING_SNAKE     | MAX_RETRY_COUNT        | true constants, env vars, enums       |
-| kebab-case          | user-profile-card      | CSS classes, file names, URLs, HTML   |
-*/
+// | Case                | Example                | Used For                              |
+// |---------------------|------------------------|---------------------------------------|
+// | camelCase           | getUserById            | variables, functions, methods         |
+// | PascalCase          | UserProfile            | classes, components, constructors     |
+// | snake_case          | user_record            | JSON keys, DB fields, config (rare)   |
+// | SCREAMING_SNAKE     | MAX_RETRY_COUNT        | true constants, env vars, enums       |
+// | kebab-case          | user-profile-card      | CSS classes, file names, URLs, HTML   |
 
 // ============================================================================
 // Practical Example: A Small Project Structure

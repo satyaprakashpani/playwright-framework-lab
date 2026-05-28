@@ -8,8 +8,8 @@ var _secretCode = 6524;
 
 //1st_day_of_week = 'Sunday';
 
-car_no_4 = 'Alto';
-ramesh_1st_son = "Arjun";
+let car_no_4 = 'Alto';
+let ramesh_1st_son = "Arjun";
 
 // if = 6;
 //class = 50;
@@ -30,10 +30,3 @@ var first* name = "Testname";
 var first) name = "Krishna" */
 var first_name = "Ram"
 var first$name = "James"
-
-
-
-
-
-
-
