@@ -33,9 +33,9 @@ function fetchDataFromApi() {
 
 // Methods in objects/classes
 const userService = {
-    getUserProfile: function() {},
-    updateUserSettings: function() {},
-    deleteUserAccount: function() {}
+    getUserProfile: function () { },
+    updateUserSettings: function () { },
+    deleteUserAccount: function () { }
 };
 
 // React Hooks (custom)
